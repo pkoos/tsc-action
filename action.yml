@@ -1,24 +1,16 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: 'heart'
-  color: 'red'
-
-# Define your inputs here.
+name: "Build and deploy Typescript Site"
+author: "Paul Koos"
+description: "This will compile typescript with the tsc command."
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  deploy-branch:
+    description: "The name of the branch being used to deploy to GitHub Pages"
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
-
+  tsc-directory:
+    description: "Where the tsconfig.json file is located within the project. If this is left out, the default project folder is used instead."
+    required: false
 runs:
   using: node20
   main: dist/index.js
+branding:
+  icon: 'heart'
+  color: 'red'
